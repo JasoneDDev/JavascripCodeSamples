@@ -217,7 +217,6 @@ function OnCollisionEnter(collider:Collision)
 	{}
 	else 
 	{
-	//print ("Hitting Boundary");
 	
 	
 	}
@@ -234,7 +233,7 @@ function OnCollisionStay(collider3:Collision)
 	else
 	{
 		//ignore
-		//collidingWater=false;
+		
 	}
 	
 	var direction = Vector3.up;
@@ -252,7 +251,7 @@ function OnCollisionStay(collider3:Collision)
 	}
 	else
 	{
-	//Debug.Log("collided with " + collider3.gameObject.name);
+	
 	}
 }
 
@@ -336,12 +335,12 @@ var riversForce:float;
 if(Vector3.Angle(transform.forward, waterCurrent.GetComponent(CurrentMarker).currentModyfier) > 1.5 && Speed >=0.1f && collidingWater)
 {
 riversForce = waterCurrent.GetComponent(CurrentMarker).currentsForce * upRiverTracking;
-//Debug.Log("this is working " + riversForce);
+
 }
 else if(collidingWater)
 {
 riversForce = waterCurrent.GetComponent(CurrentMarker).currentsForce;
-//Debug.Log("this is working " + riversForce);
+
 }
 else
 {
@@ -349,11 +348,6 @@ riversForce=0;
 }
 
 rigidbody.AddForce(waterCurrent.GetComponent(CurrentMarker).currentModyfier * riversForce,ForceMode.Acceleration); 
-
-
-//if (OuyaInputManager.GetButtonDown("RB", OuyaSDK.OuyaPlayer.player1))  triggers
-//Debug.Log("roll stick " + InputManager.GetAxis("Roll", playerName));
-//Debug.Log("vert stick " + InputManager.GetAxis("Vertical", playerName));
 
 
 if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
@@ -366,9 +360,6 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 	gui.LToggle.joystickPosition.y <- 0.08)
 {
 			Tilt = 0;
-		
-				//Debug.Log("Paddle X " + gui.LToggle.joystickPosition.x );
-				//Debug.Log("Paddle Y " + gui.LToggle.joystickPosition.y);
 					
 			
 			if(!StuntMode)
@@ -383,9 +374,6 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 			}
 			
 				var turn:float;
-				
-				//if(InputManager.GetAxis("Vertical", playerName)>-0.5 && InputManager.GetAxis("Vertical", playerName)<0.5 && gui.LToggle.joystickPosition.y < 0.4 && gui.LToggle.joystickPosition.y >- 0.4)
-				//{
 				
 			if ((InputManager.GetAxis("Roll", playerName) <-0.15 &&
 				!InputManager.GetButton("TurnRight", playerName) &&
@@ -451,14 +439,14 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 					Direction = 0.75 * InputManager.GetAxis("Roll", playerName);
 					DirectionAnim = 0.75 * InputManager.GetAxis("Roll", playerName);
 					}
-					//Debug.Log("Paddle Left");
+					
 				}
 				
 				rigidbody.AddRelativeForce(-1*Vector3.up * liftForce,ForceMode.Impulse); 
-				//CycleTime();
+				
 				wooHitsR+=1;
 
-				//Debug.Log("Paddle Left");
+				
 
 				
 				
@@ -477,7 +465,7 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 			!cycle))
 			{
 				
-			//Direction = 1.0;
+			
 			if(gui.LToggle.joystickPosition.x > 0.08)
 				{
 					if((gui.LToggle.joystickPosition.x > 0.95 && gui.LToggle.joystickPosition.y > 0.5) || (gui.LToggle.joystickPosition.x > 0.95 && gui.LToggle.joystickPosition.y <- 0.5))
@@ -509,7 +497,7 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 					DirectionAnim= 0.55  * (gui.LToggle.joystickPosition.x);
 					Debug.Log("three");
 					}
-						//Debug.Log("Paddle Right");
+						
 				}
 				
 				else
@@ -532,16 +520,16 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 					Direction = 0.75 * InputManager.GetAxis("Roll", playerName);
 					DirectionAnim= 0.75 * InputManager.GetAxis("Roll", playerName);
 					}
-						//Debug.Log("Paddle Right");
+						
 			}
 			rigidbody.AddRelativeForce(-1*Vector3.up * liftForce ,ForceMode.Impulse); 
-				//CycleTime();
+				
 				wooHitsL+=1;
 
-				//Debug.Log("Paddle Right");
+				
 			
 			}
-			//}
+			
 			//PADDLING FORWARDS
 			if( InputManager.GetAxis("Vertical", playerName) <-0.1 && !strokeR && startScript.thrustPower >=0.1 && !cycle  || InputManager.GetButton("DUp", playerName)  && !strokeR && startScript.thrustPower >=0.1 && !cycle || gui.LToggle.joystickPosition.y > 0.1 && !strokeR && startScript.thrustPower >=0.1 && !cycle)
 			{
@@ -555,11 +543,10 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 				}
 				strokeR = true;
 				strokeL = false;
-				//rigidbody.AddRelativeForce(-1*Vector3.up * liftForce,ForceMode.Impulse); 
+				
 				CycleTime();
 				startScript.thrustPower *= 0.70f;
 				goFastTimer+=0.2;
-				//Debug.Log("Paddle up");
 				
 			}
 			else if(InputManager.GetAxis("Vertical", playerName) <-0.1 && !strokeL && startScript.thrustPower >=0.1  && !cycle  || InputManager.GetButton("DUp", playerName)  && !strokeL && startScript.thrustPower >=0.1 && !cycle || gui.LToggle.joystickPosition.y > 0.1 && !strokeL && startScript.thrustPower >=0.1 && !cycle)
@@ -574,11 +561,9 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 				}
 				strokeL = true;
 				strokeR = false;
-				//rigidbody.AddRelativeForce(Vector3.up * liftForce,ForceMode.Impulse); 
 				CycleTime();
 				startScript.thrustPower  *= 0.70f;
 				goFastTimer+=0.2;
-				//Debug.Log("Paddle up");
 			}
 			//PADDLING BACKWARDS
 			else if(InputManager.GetAxis("Vertical", playerName) >0.1 && !strokeR && startScript.thrustPower >=0.1  && !cycle  || InputManager.GetButton("DDown", playerName)  && !strokeR && startScript.thrustPower >=0.1  && !cycle || gui.LToggle.joystickPosition.y <- 0.1 && !strokeR && startScript.thrustPower >=0.1 && !cycle)
@@ -593,11 +578,9 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 				}
 				strokeR = true;
 				strokeL = false;
-				//rigidbody.AddRelativeForce(Vector3.up * liftForce,ForceMode.Impulse); 
 				CycleTime();
 				startScript.thrustPower  *= 0.70f;
 				goFastTimer=0;
-			//Debug.Log("Paddle down");
 			}
 			else if(InputManager.GetAxis("Vertical", playerName) >0.1 && !strokeL && startScript.thrustPower >=0.1  && !cycle  || InputManager.GetButton("DDown", playerName)  && !strokeL && startScript.thrustPower >=0.1  && !cycle || gui.LToggle.joystickPosition.y <- 0.1 && !strokeL && startScript.thrustPower >=0.1 && !cycle)
 			{
@@ -611,11 +594,9 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 				}
 				strokeL = true;
 				strokeR = false;
-				//rigidbody.AddRelativeForce(-1*Vector3.up * liftForce,ForceMode.Impulse); 
 				CycleTime();
 				startScript.thrustPower *= 0.70f;
 				goFastTimer=0;
-			//	Debug.Log("Paddle down");
 			}
 			
 			if(InputManager.GetAxis("Roll", playerName) <-0.8 &&  InputManager.GetAxis("Yaw", playerName) <-0.8  && startScript.thrustPower >=0.1 && !cycle ||  InputManager.GetButton("DLeft", playerName) &&  InputManager.GetAxis("Yaw", playerName) <-0.8 &&  startScript.thrustPower >=0.1 && !cycle || gui.LToggle.joystickPosition.x <- 0.1 &&  gui.RToggle.joystickPosition.x <- 0.1 &&  startScript.thrustPower >=0.1 && !cycle)
@@ -638,13 +619,12 @@ if (InputManager.GetAxis("Vertical", playerName) > 0.1 ||
 				}
 
 }
-//!InputManager.GetButton("TurnRight", playerName) && !InputManager.GetButton("TurnLeft", playerName)
 else if(InputManager.GetAxis("Roll", playerName)<0.2 && InputManager.GetAxis("Roll", playerName)>-0.2 && InputManager.GetAxis("Vertical", playerName) <0.2 && InputManager.GetAxis("Vertical", playerName) >-0.2 || gui.LToggle.joystickPosition.x > -0.1 || gui.LToggle.joystickPosition.x < 0.1 || gui.LToggle.joystickPosition.y > -0.1 || gui.LToggle.joystickPosition.y < 0.1)//HERE IS THE CODE FOR MANEUVERING KAYAK INTO TRICKS ETC.
 {
 		goFastTimer=0;
 		var tiltAngle:float;
 		var ZAngle:float = Vector3.Angle(transform.forward, -1*Vector3.up);
-		//Debug.Log(ZAngle);
+		
 		if(ZAngle < 45)// kayak's z is <45 degrees from world z then we are tilting back
 		{
 			Tilt = 1.0;  //----------change this to trigger guy tilt back / tilt up animation ----------leaning back
@@ -672,20 +652,17 @@ else if(InputManager.GetAxis("Roll", playerName)<0.2 && InputManager.GetAxis("Ro
 		//roll Right
 		alphaRotation++;
 		
-		//rigidbody.AddRelativeForce(-1*Vector3.forward * liftForce,ForceMode.Impulse); 
 		rigidbody.AddRelativeTorque(Vector3.forward * (TStrength/2*Direction),ForceMode.Impulse); 
 		BCollide.size =regBSize;
 		}
 		else if(InputManager.GetAxis("Yaw", playerName) >0.8 || InputManager.GetButton("Exit", playerName) || (gui.RToggle.joystickPosition.x > 0.1 && gui.RToggle.joystickPosition.y < 0.1 && gui.RToggle.joystickPosition.y > -0.1))
 		{
-		//Debug.Log("Paddle Left");
 		Direction = -1.0;
 		DirectionAnim = -1.0;
 		
 		//roll Left
 		alphaRotation--;
 		
-		//rigidbody.AddRelativeForce(-1*Vector3.forward * liftForce,ForceMode.Impulse); 
 		rigidbody.AddRelativeTorque(Vector3.forward * (TStrength/2*Direction),ForceMode.Impulse); 
 		BCollide.size =regBSize;
 		}
@@ -694,9 +671,7 @@ else if(InputManager.GetAxis("Roll", playerName)<0.2 && InputManager.GetAxis("Ro
 		
 		if(InputManager.GetAxis("Pitch", playerName) <-0.8 || InputManager.GetButton("Option", playerName) || (gui.RToggle.joystickPosition.y > 0.1 && gui.RToggle.joystickPosition.x < 0.1 && gui.RToggle.joystickPosition.x > -0.1))
 		{
-		//Debug.Log("Tilt forward");
 		tiltAngle=1.0;
-		//rigidbody.AddRelativeForce(-1*Vector3.forward * liftForce,ForceMode.Impulse); 
 		rigidbody.AddRelativeTorque(Vector3.right * ((TStrength/2*tiltAngle)),ForceMode.Impulse); 
 		BCollide.size = Vector3(2.1,2.1,1); //size for tricks
 		this.GetComponent(BuoyancyForce).Recalculate();
@@ -710,7 +685,6 @@ else if(InputManager.GetAxis("Roll", playerName)<0.2 && InputManager.GetAxis("Ro
 		{
 		//Debug.Log("tilt backward");
 		tiltAngle=-1.0;
-		//rigidbody.AddRelativeForce(-1*Vector3.forward * liftForce,ForceMode.Impulse); 
 		rigidbody.AddRelativeTorque(Vector3.right * ((TStrength/2*tiltAngle)),ForceMode.Impulse); 
 		BCollide.size = Vector3(2.1,2.1,1); //size for tricks
 		this.GetComponent(BuoyancyForce).Recalculate();
@@ -725,34 +699,15 @@ else if(InputManager.GetAxis("Roll", playerName)<0.2 && InputManager.GetAxis("Ro
 		tiltAngle=0;
 		}
 		
-//if(InputManager.GetAxis("TurnRight", playerName) <-0.8 &&  InputManager.GetAxis("TurnLeft", playerName) >0.8 || InputManager.GetButton("TurnRight", playerName) && !InputManager.GetButton("TurnLeft", playerName) )
-		
-//---------------------------------------------------------TRICKS---------------------------------------------------------------------		
-		
-	//if StuntMode	is true we check to see if the kayak is oriented in various positions based on time and non wavering
-//	var stuntStarted=false;
-//	var stuntClockStart:float;
-//	var stuntClock:float;
 
-//	var pitchAngle:float;
-//	var yawAngle:float;
-//	var heightDrop:float;
-
-
-//deltaRotation += rigidbody.angularVelocity.z;
-//alphaRotation += rigidbody.angularVelocity.x;
 betaRotation += rigidbody.angularVelocity.y;
-
-//     rigidbody.angularVelocity.x   will be used for checking if the player wrights himself or does a side dunk / flip
 
 pitchAngle = deltaRotation - startAngle; //  forward roll
 yawAngle = betaRotation - startAngle; // turning
 rollAngle = alphaRotation - startAngle; // roll to side
-//print(deltaRotation + " start angle " + startAngle + " ===== " + pitchAngle);
 
 //HAIL MARY STUNT------------------------------
 var currentHeight:float = transform.position.y;
-//Debug.Log(" pitch " + pitchAngle + " height " + currentHeight );		
 
 			if(!stuntReset && StuntMode)
 			{
@@ -796,7 +751,7 @@ var currentHeight:float = transform.position.y;
 			{
 			//EskimoRoll
 			//Debug.Log("---------------------------------------------------------------Eskimo Roll--------------------------------------");
-			//StuntMode=false;
+			
 			stuntScript.CompletedStunt("EskimoRoll", isPlayer);
 			alphaRotation=0;
 			
@@ -806,9 +761,8 @@ var currentHeight:float = transform.position.y;
 			{
 			//Bow Stall
 			
-			//StuntMode=false;
+			
 			stuntTimer += 0.01;
-		//	Debug.Log(stuntTimer);
 				if(stuntTimer > 1.2)
 				{
 				//	Debug.Log("---------------------------------------------------------------Bow Stall--------------------------------------");
@@ -823,9 +777,7 @@ var currentHeight:float = transform.position.y;
 			{
 			//Bow Stall
 			
-			//StuntMode=false;
 			stuntTimer += 0.01;
-			//Debug.Log(stuntTimer);
 				if(stuntTimer > 1.2)
 				{
 				//	Debug.Log("---------------------------------------------------------------Stern Stall--------------------------------------");
@@ -843,12 +795,6 @@ var currentHeight:float = transform.position.y;
 //--------------------------------------------------------------------------------------------------------------------------------------
 }
 
-//Debug.Log(Input.GetAxis("Joy1 Axis 3"));
-
-//InputManager.GetAxis("TurnLeft", playerName) <- 0.8
-//InputManager.GetButton("TurnLeft", playerName)
-//InputManager.GetButton("TurnRight", playerName) 
-//Debug.Log(InputManager.GetAxis("TurnRight", playerName));
 if(InputManager.GetAxis("TurnRight", playerName) <-0.3 &&  InputManager.GetAxis("TurnLeft", playerName) >-0.2 || InputManager.GetButton("TurnRight", playerName) && !InputManager.GetButton("TurnLeft", playerName) && !loader.isMobile || InputManager.GetAxis("TurnRight", playerName) > 0.3 &&  InputManager.GetAxis("TurnLeft", playerName) < 0.2 && loader.isMobile)
 {
 Debug.Log("Paddle Right");
@@ -920,19 +866,7 @@ wooHitsR+=1;
 	}
 	
 	DirectionAnim = Direction; 
-	
-//	if(DirectionAnim>0.1)
-//	{
-//	DirectionAnim -=0.02;
-//	}
-//	else if(DirectionAnim<-0.1)
-//	{
-//	DirectionAnim +=0.02;
-//	}
-//	else
-//	{
-//	DirectionAnim=0;
-//	}
+
 
 
 	var regDrag= MaxSpeed + ContinuousDrag;
@@ -943,7 +877,6 @@ wooHitsR+=1;
 	rigidbody.angularDrag = regDrag + angDragOffset;
 	}
 	
-	//Debug.Log("applied Drag: " +regDrag + " current Speed: " + Speed);
 	
 
 
@@ -966,7 +899,6 @@ Speed=0;
 }
 
 rigidbody.AddRelativeTorque(Vector3.up * (TStrength*Direction),ForceMode.Acceleration); 
-//Debug.Log(Input.GetAxis("Vertical") + " vertical ");
 
 
 //Here we set the splashes per stroke... only once each time it touches the water
@@ -982,7 +914,6 @@ var lSplashInstance = Instantiate(paddleSplash, splashLOC, transform.rotation);
 // based on the forward or backwards we apply a force to throw the ripple in that direction.
 
 
-		//lSplashInstance.rigidbody.AddForce(waterCurrent.GetComponent(CurrentMarker).currentModyfier * waterCurrent.GetComponent(CurrentMarker).currentsForce*0.75,ForceMode.Impulse); 
 if(!pLAudio.audio.isPlaying)
 {
 	pLAudio.audio.clip = paddleL;	
@@ -1006,7 +937,6 @@ var rSplashInstance = Instantiate(paddleSplash, splashLOC2, Quaternion.identity)
 // based on the forward or backwards we apply a force to throw the ripple in that direction.
 
 	
-	//	rSplashInstance.rigidbody.AddForce(waterCurrent.GetComponent(CurrentMarker).currentModyfier * waterCurrent.GetComponent(CurrentMarker).currentsForce*0.75,ForceMode.Impulse); 
 if(!pRAudio.audio.isPlaying)
 {
 pRAudio.audio.clip = paddleR;	
@@ -1029,16 +959,11 @@ if(Vector3.Angle(transform.up, Vector3.up) > 120 && startScript.healthPower >=0)
 	}
 PlayGurgle();
 	TutorialTurnOver();
-//	if(!gui.tutorial)
-//	{
-//		gui.TutorialHelp("wrightYourself", false);
-//		wrighted=false;
-//	}
-//print("now upsidown" + Vector3.Angle(transform.up, Vector3.up));
+
 }
 else 
 {
-//print("right side up" + Vector3.Angle(transform.up, Vector3.up));
+
 startScript.healthPower += (1 - startScript.healthPower)*0.0015f;
 
 	if(!wrighted && gui.tutorial)
@@ -1170,7 +1095,7 @@ for (var i:int = 0; i < players.Length || i < 4; i++)
               if (i < players.Length)
               {
                  
-                //  print("player "+ i);
+               
               }
 
 	}
