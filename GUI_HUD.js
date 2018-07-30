@@ -366,26 +366,6 @@ function Start () {
 
 
 //-------------------BUTTON CODE--------------------------------------------
-
-//	QuitBtn = UIButton.create(buttonUI,"QuitBtn.png","QuitBtn.png",0,0,0);// main menu button on end lvl screen
-//	QuitBtn.centerize();
-//	QuitBtn.highlightedTouchOffsets = new UIEdgeOffsets(30);
-//	QuitBtn.setSize( QuitBtn.width*guiScaleFactor, QuitBtn.height*guiScaleFactor);
-//	QuitBtn.positionFromCenter(0.15f,-0.2f);
-//	QuitBtn.onTouchUpInside += onTouchQuitBtn;
-//	QuitBtn.hidden=true;
-//	QuitBtn.touchDownSound = buttonSound;
-	
-
-	
-//	soundToggleBtn = UIToggleButton.create(buttonUI,"SoundOffBtn.png","SoundOnBtn.png","SoundOnBtn.png",0,0,5);// replay button on end lvl screen
-//	soundToggleBtn.centerize();
-//	soundToggleBtn.setSize( soundToggleBtn.width*guiScaleFactor, soundToggleBtn.height*guiScaleFactor);
-//	soundToggleBtn.positionFromTopLeft(0.25f,0.03f);
-//	soundToggleBtn.onToggle += onTouchSoundToggle;
-//
-//	soundToggleBtn.hidden=true;
-	//soundToggleBtn.touchDownSound = buttonSound;
 	
 	SoundBtn = UIToggleButton.create(buttonUI,"SoundBtn.png","SoundBtnSelected.png","SoundBtnSelected.png",0,0,5);// replay button on end lvl screen
 	SoundBtn.centerize();
@@ -458,11 +438,7 @@ function Start () {
 	pressABtn.hidden=true;
 	
 	//-----------------------------------------------------------------
-	
-//
-//		ControlsScheme  = HelpUI.addSprite( "OUYAControls.png", 0, 0, 10 );
-//	ControlsScheme.positionFromCenter(0.0f,0.0f);
-//	ControlsScheme.hidden=true;
+
 	
 
 	if(InputManager.Moga)
@@ -522,7 +498,6 @@ function Start () {
 	MoonCBar.value=0;
 	MoonCBar.hidden=true;
 
-	//ContinueGame  = buttonUI.addSprite( "ContinueGame.png", 0, 0, 10 );
 	ContinueGame  = UIButton.create(buttonUI,"ContinueGame.png","ContinueGame.png",0,0,10);
 	ContinueGame.positionFromCenter(-0.2f,0.05f);
 	ContinueGame.hidden=true;
@@ -539,11 +514,9 @@ function Start () {
 	
 	Controls.positionFromCenter(0.1f,0.05f);
 	Controls.hidden=true;
-	//Controls.onTouchUpInside += onTouchControls;
 	Controls.touchDownSound = buttonSound;
 	
 	LeaveRiverBtn  = UIButton.create(buttonUI,"LeaveRiverBtn.png","LeaveRiverBtn.png",0,0,10);
-	//LeaveRiverBtn  = buttonUI.addSprite( "LeaveRiverBtn.png", 0, 0, 10 );
 	LeaveRiverBtn.positionFromCenter(0.25f,-0.05f);
 	LeaveRiverBtn.hidden=true;
 	LeaveRiverBtn.onTouchUpInside += onTouchLeaveRiverBtn;
@@ -562,14 +535,11 @@ function Start () {
 	RetryBtnSelected.onTouchUpInside += onTouchRetryBtn;
 	RetryBtnSelected.touchDownSound = buttonSound;
 	
-	//ControlsSelected  = buttonUI.addSprite( "GameControlsSelected.png", 0, 0, 10 );
 	ControlsSelected  = UIButton.create(buttonUI,"GameControlsSelected.png","GameControlsSelected.png",0,0,10);
 	ControlsSelected.positionFromCenter(0.1f,0.05f);
 	ControlsSelected.hidden=true;
-	//ControlsSelected.onTouchUpInside += onTouchControls;
 	ControlsSelected.touchDownSound = buttonSound;	
 	
-	//LeaveRiverBtnSelected  = buttonUI.addSprite( "LeaveRiverBtnSelected.png", 0, 0, 10 );
 	LeaveRiverBtnSelected  = UIButton.create(buttonUI,"LeaveRiverBtnSelected.png","LeaveRiverBtnSelected.png",0,0,10);
 	LeaveRiverBtnSelected.positionFromCenter(0.25f,-0.05f);
 	LeaveRiverBtnSelected.hidden=true;
@@ -594,7 +564,6 @@ function Start () {
 	var anim = Loading.addSpriteAnimation( "anim", 0.15f, "Loading.png", "Loading01.png", "Loading01.png", "Loading02.png", "Loading02.png", "Loading03.png", "Loading03.png", "Loading.png", "Loading.png");
 	Loading.positionFromCenter(0.0f,0.0f);
 	Loading.hidden=true;
-			//anim.loopReverse = true; // optinally loop in reverse
 	}
 	
 function PauseMenu()
@@ -761,15 +730,11 @@ function onTouchLeaveRiverBtn()
 	
 function FixedUpdate()
 {
-//"DPU" // dpad up
-//"DPD" // dpad down
-//"O" is select with O btn
 
 
 playerName = loader.Players[0];
 
 
-//OuyaInputManager.GetButtonDown("RT",OuyaSDK.OuyaPlayer.player1)
 if(startScript.gamePaused)
 {
 		if(!ContinueGameSelected.hidden && ControlsSelected.hidden && !stick)// start game is selected
@@ -1206,9 +1171,6 @@ function Loop()
 
 function TutorialHelp(type:String, hiding:boolean)
 {
-
-	//if(!startScript.MultiPlayerMode )
-	//{
 		
 		
 		if(type == "wrightYourself")
