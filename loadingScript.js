@@ -114,23 +114,14 @@ PlayerPrefs.GetInt("audioOn",2);
 //--------------------------------------------------------------------------------------------
 
 
-//PlayerPrefs.SetFloat("CountDownTime", 0.0);
 
 Screen.SetResolution(1280, 720, true);
-//OuyaSDK.OuyaJava.JavaSetResolution("1280x720");
 
 #if UNITY_ANDROID
 jCommander = GetComponent(JavaCommander);
 #endif
 DetectControllers();
-//
-//		for(var ii:int=0; ii < 4; ii++)
-//			{
-//			var controllerNum:OuyaSDK.OuyaPlayer = (ii+1);
-//			Debug.Log(ii + " cont " + controllerNum);
-//			
-//			Players[ii]=(controllerNum);
-//			}
+
 
 if(PlayerPrefs.GetString("NeverLoaded") != "IHaveBeenLoaded" && !isMobile)
 {
@@ -158,8 +149,6 @@ else
 	
 }
 
-
-//Application.LoadLevel("MenuScene");
 audio.volume = 0;
 
 if(isSplashPage)
@@ -232,25 +221,18 @@ function FixedUpdate()
 			{
 			InputManager.Moga = true;
 			MogaPro=true;
-			//ControllerCount = 1;
-			//Controllers = ["MogaPro Controller"];
+			
 			}
 			else if ((MogaInput.GetControllerSupportedVersion() == MogaController.ACTION_VERSION_MOGA) && (!InputManager.Moga))
 			{
 			InputManager.Moga = true;
 			MogaPro=false;
-			//ControllerCount = 1;
-			//Controllers = ["Moga Controller"];
 			}
 		}
 		else
 		{
 		InputManager.Moga = false;
-//			if(Controllers[0] == "MogaPro Controller" || Controllers[0] == "Moga Controller")
-//			{
-//			//Controllers = null;
-//			//ControllerCount =0;
-//			}
+
 		}
 		#endif
 		if(MasterAlpha<0.999 && triggeredForward)
@@ -302,8 +284,6 @@ function FixedUpdate()
 	
 	
 	
-	//Debug.Log(SystemInfo.deviceModel);
-	
 	
 	if(SwappingSound)
 	{
@@ -311,7 +291,6 @@ function FixedUpdate()
 		{
 			MusicVolumeFloat-=0.05;
 			audio.volume = MusicVolumeFloat;
-			//Debug.Log("music volume " + MusicVolumeFloat);
 		}
 		else if( MusicVolumeFloat<=0 && audio.clip != audioToSwapTo)
 		{
@@ -320,7 +299,6 @@ function FixedUpdate()
 			{
 				audio.Play();
 				}
-		//	Debug.Log("swapped audio clip");
 		}
 		else if( MusicVolumeFloat < 1  && audio.clip == audioToSwapTo)
 		{
@@ -330,12 +308,10 @@ function FixedUpdate()
 			{
 				audio.Play();
 				}
-			//Debug.Log("swapping " + MusicVolumeFloat);
 		}
 		else if(MusicVolumeFloat >=1 && audio.clip == audioToSwapTo && audio.isPlaying)
 		{
 		SwappingSound=false;
-	//	Debug.Log("swapping OFF");
 		}
 	}	
 	
@@ -345,8 +321,6 @@ function FixedUpdate()
 			CountDownTimer += Time.deltaTime; 
 			TimeRemaining = TimeTrial - CountDownTimer;
 			interval += Time.deltaTime;
-			
-		//	Debug.Log("time remianing "+TimeRemaining + " " + TimeTrial + " - " + CountDownTimer);
 			
 			if(interval > 10)
 			{
