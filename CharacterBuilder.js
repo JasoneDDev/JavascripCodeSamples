@@ -89,12 +89,6 @@ var charSaved = new Array(PlayerPrefsX.GetStringArray("characterDB"));
 	}
 	
 	LoadCharacter(true,1);
-	
-	
-	//CharResetMat01.mainTexture = RT;
-	//CharResetMat02.mainTexture = RT;
-	//CharResetMat03.mainTexture = RT;
-	//CharResetMat04.mainTexture = RT;
 }
 
 function InputName()
@@ -921,11 +915,7 @@ function UnlockHelmets():boolean
 {
 
 	var StringText1:String = PlayerPrefs.GetString("unlockedHats");
-	var helArray:String[] = StringText1.Split(","[0]);
-	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
+	var helArray:String[] = StringText1.Split(","[0]);	
 	
 	for (var i in helArray)
 	{
@@ -947,10 +937,6 @@ function UnlockHairs():boolean
 
 	var StringText2:String = PlayerPrefs.GetString("unlockedHairs");
 	var hairArray:String[] = StringText2.Split(","[0]);
-	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
 	
 	for (var i in hairArray)
 	{
