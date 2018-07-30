@@ -143,22 +143,7 @@ function SETUP():boolean
 	{
 		mainSetup = setup01;
 	}
-//	else if(setupNum == 2 )
-//	{
-//		mainSetup = setup02;
-//	}
-//	else if(setupNum == 3 )
-//	{
-//		mainSetup = setup03;
-//	}
-//	else if(setupNum == 4 )
-//	{
-//		mainSetup = setup04;
-//	}
-//	else if(setupNum == 5 )
-//	{
-//		mainSetup = setup05;
-//	}
+
 	else if(setupNum == 10 && practiceMode)
 	{
 		return true;
@@ -334,21 +319,6 @@ var multiHiders:GameObject[] = GameObject.FindGameObjectsWithTag("MultiHiders");
 	for(hide in multiHiders)
 	{
 		hide.active=false;
-//		var particleSystem : ParticleSystem;   
-//		particleSystem = hide.GetComponent(ParticleSystem);
-// 
-//		if (particleSystem.enableEmission)
-//		{
-//		    
-//		       particleSystem.enableEmission = false;
-//		    
-//		 }
-//		 else
-//		 {       
-//		    
-//		       particleSystem.enableEmission = true;
-//		              
-//		 }
 	}
 }
 
@@ -643,16 +613,7 @@ function StartTimer()
 
 function PlayerDied()
 {
-//	Debug.Log("player dying");
-//	RealCam = GameObject.FindWithTag("MainCamera").transform.FindChild("Main Camera").camera;
-//	if(RealCam!=null)
-//	{
-//		RealCam.GetComponent(BlurEffect).enabled=true;
-//		RealCam.GetComponent(BlurEffect).iterations = 1;
-//		RealCam.GetComponent(BlurEffect).blurSpread = 3;
-//		Debug.Log("found real cam");
-//	}
-//	Debug.Log("found real cam2");
+
 if(!gui.HealthBar.hidden)
 {
 	gui.TutorialHelp("HideAll", false);
@@ -1045,10 +1006,7 @@ function UnlockKayaks():boolean
 	
 	var StringText:String = PlayerPrefs.GetString("unlockedKayaks");
 	var kayakArrayNew:String[] = StringText.Split(","[0]);
-	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
+
 	
 	for (var i in kayakArrayNew)
 	{
@@ -1062,15 +1020,6 @@ function UnlockKayaks():boolean
 		}
 	}
 	
-	
-	
-//	var unlocked:int = PlayerPrefs.GetInt("unlockedKayaks");
-//	
-//	for (var i:int = 0; i<=unlocked-1; i++)
-//	{
-//		var tempOBJ:GameObject = lockedKayaks[i];
-//		kayakArray += [tempOBJ];
-//	}
 
 return true;
 }
@@ -1083,10 +1032,6 @@ function UnlockHelmets():boolean
 
 	var StringText1:String = PlayerPrefs.GetString("unlockedHats");
 	var helArray:String[] = StringText1.Split(","[0]);
-	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
 	
 	for (var i in helArray)
 	{
@@ -1108,10 +1053,6 @@ function UnlockHairs():boolean
 
 	var StringText2:String = PlayerPrefs.GetString("unlockedHairs");
 	var hairArray:String[] = StringText2.Split(","[0]);
-	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
 	
 	for (var i in hairArray)
 	{
@@ -1238,8 +1179,7 @@ var achieved = false;
 	
 	if(itemsArePresent && itemsGathered == totalItems)
 	{
-	//PlayerPrefs.SetInt(""+Application.loadedLevelName + "Acheivement0", 2);
-	//achieved = true;
+	
 	}
 	
 
@@ -1435,8 +1375,6 @@ function CoinGrab(goldCoin:boolean)
 		audio.Play();
 	}
 	
-//	print("g coin = " + gCoins + " moon coins = " + mCoins);
-	
-	//print("g coin% = " + gCoinsPer + " moon coins% = " + mCoinsPer);
+
 	
 }
