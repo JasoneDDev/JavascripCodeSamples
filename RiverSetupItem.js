@@ -235,11 +235,6 @@ yield WaitForSeconds(0.2);
 		
 var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivementUnlocked");		
 	
-//	var UnlockHair = false;
-//var UnlockHat = false;
-//
-//var subItemNumUnlock:int; // hair or hat
-//var unlockForAchNum:int;
 	
 	
 	//ACHEIVEMENTS-------------------------------
@@ -247,7 +242,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	if(PlayerPrefs.GetInt(sceneToLoadNameSave + "Acheivement01") == 2)// check to see if this acheivement thas been completed -----------------   name is  sceneToLoadName + Acheivement #  achieve is 2 anything else is not acheived
 	{
 	
-	//Acheivement01 = gui.riverUI.addSprite( "AcheivedIcon.png", 0, 0, 10 );
 	Acheivement01 = UIButton.create(gui.riverUI,"AcheivedIcon.png","AcheivedIcon.png",0,0,10);
 	Acheivement01.positionFromCenter(0.1f,0.65f);
 	Acheivement01.hidden=true;
@@ -285,7 +279,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	}
 	else
 	{
-	//Acheivement01 = gui.riverUI.addSprite( "AcheivementIcon.png", 0, 0, 10);
 	Acheivement01 = UIButton.create(gui.riverUI,"AcheivementIcon.png","AcheivementIcon.png",0,0,10);
 	Acheivement01.positionFromCenter(0.1f,0.65f);
 	Acheivement01.hidden=true;
@@ -303,7 +296,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	if(PlayerPrefs.GetInt(sceneToLoadNameSave + "Acheivement02") == 2)// check to see if this acheivement thas been completed -----------------   name is  sceneToLoadName + Acheivement #  achieve is 2 anything else is not acheived
 	{
 	
-	//Acheivement02 = gui.riverUI.addSprite( "AcheivedIcon.png", 0, 0, 10 );
 	Acheivement02 = UIButton.create(gui.riverUI,"AcheivedIcon.png","AcheivedIcon.png",0,0,10);
 	Acheivement02.positionFromCenter(0.1f,0.75f);
 	Acheivement02.hidden=true;
@@ -355,7 +347,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	if(PlayerPrefs.GetInt(sceneToLoadNameSave + "Acheivement03") == 2)// check to see if this acheivement thas been completed -----------------   name is  sceneToLoadName + Acheivement #  achieve is 2 anything else is not acheived
 	{
 	
-	//Acheivement03 = gui.riverUI.addSprite( "AcheivedIcon.png", 0, 0, 10 );
 	Acheivement03 = UIButton.create(gui.riverUI,"AcheivedIcon.png","AcheivedIcon.png",0,0,10);
 	Acheivement03.positionFromCenter(0.1f,0.85f);
 	Acheivement03.hidden=true;
@@ -390,7 +381,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	}
 	else
 	{
-	//Acheivement03 = gui.riverUI.addSprite( "AcheivementIcon.png", 0, 0, 10);
 	Acheivement03 = UIButton.create(gui.riverUI,"AcheivementIcon.png","AcheivementIcon.png",0,0,10);
 	Acheivement03.positionFromCenter(0.1f,0.85f);
 	Acheivement03.hidden=true;
@@ -407,8 +397,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	
 	if(PlayerPrefs.GetInt(sceneToLoadNameSave + "Acheivement04") == 2)// check to see if this acheivement thas been completed -----------------   name is  sceneToLoadName + Acheivement #  achieve is 2 anything else is not acheived
 	{
-	
-	//Acheivement04 = gui.riverUI.addSprite( "AcheivedIcon.png", 0, 0, 10 );
 	Acheivement04 = UIButton.create(gui.riverUI,"AcheivedIcon.png","AcheivedIcon.png",0,0,10);
 	Acheivement04.positionFromCenter(0.1f,0.95f);
 	Acheivement04.hidden=true;
@@ -443,7 +431,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	}
 	else
 	{
-	//Acheivement04 = gui.riverUI.addSprite( "AcheivementIcon.png", 0, 0, 10);
 	Acheivement04 = UIButton.create(gui.riverUI,"AcheivementIcon.png","AcheivementIcon.png",0,0,10);
 	Acheivement04.positionFromCenter(0.1f,0.95f);
 	Acheivement04.hidden=true;
@@ -460,8 +447,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	
 	if(PlayerPrefs.GetInt(sceneToLoadNameSave + "Acheivement05") == 2)// check to see if this acheivement thas been completed -----------------   name is  sceneToLoadName + Acheivement #  achieve is 2 anything else is not acheived
 	{
-	
-	//Acheivement05 = gui.riverUI.addSprite( "AcheivedIcon.png", 0, 0, 10 );
 	Acheivement05 = UIButton.create(gui.riverUI,"AcheivedIcon.png","AcheivedIcon.png",0,0,10);
 	Acheivement05.positionFromCenter(0.1f,1.05f);
 	Acheivement05.hidden=true;
@@ -496,7 +481,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 	}
 	else
 	{
-	//Acheivement05 = gui.riverUI.addSprite( "AcheivementIcon.png", 0, 0, 10);
 	Acheivement05 = UIButton.create(gui.riverUI,"AcheivementIcon.png","AcheivementIcon.png",0,0,10);
 	Acheivement05.positionFromCenter(0.1f,1.05f);
 	Acheivement05.hidden=true;
@@ -511,8 +495,6 @@ var subAcheivement:int = PlayerPrefs.GetInt(sceneToLoadNameSave + "SubAcheivemen
 
 function CheckAcheivements():int
 {
-	
-	//Debug.Log("check01");
 	
 	sceneToLoadName = sceneToLoadNameSave;
 	
@@ -588,10 +570,6 @@ function ShowRiverMenu() : IEnumerator
 	if(check>0)
 	{
 	
-	
-	//Debug.Log("passed the check");
-	
-	//sceneToLoadName = "";
 	
 	RiverNameText.hidden=false;
 	RiverDescriptionText.hidden=false;
@@ -716,7 +694,6 @@ function ShowRiverMenu() : IEnumerator
 	}
 	else
 	{
-	//Debug.Log("WHAAA -- check = " + check);
 	}
 }
 
@@ -787,17 +764,11 @@ function HideRiverMenu()
 	
 	acheiveNum =0;
 
-}
-
-
-//  PlayerPrefs.SetInt("RiverSetup", 1);  
-//	PlayerPrefs.SetString("RiverSetupDirections", acheive01Description);  
+} 
 
 
 function SkipAcheivement(direction:String)
 {
-
-	//Debug.Log("oopsy  skip acheive");
 	if(direction=="Right")
 	{
 		acheiveNum++;
@@ -1002,26 +973,6 @@ function SkipAcheivement(direction:String)
 	PlayerPrefs.SetInt("RiverSetup", 1);  
 	PlayerPrefs.SetString("RiverSetupDirections", acheive01Description);  
 	
-	
-//	Acheivement01.hidden = false;
-//	Acheivement01Selected.hidden = true;
-//	
-//	Acheivement02.hidden = false;
-//	Acheivement02Selected.hidden = true;
-//	
-//	Acheivement03.hidden = false;
-//	Acheivement03Selected.hidden = true;
-//	
-//	Acheivement04.hidden = false;
-//	Acheivement04Selected.hidden = true;
-//	
-//	Acheivement05.hidden = false;
-//	Acheivement05Selected.hidden = true;
-//	
-//	AcheivementDescriptionText.clear();
-//	AcheivementDescriptionText.text = "Complete all Acheivements to unlock items. Use the Left / Right D-PAD to see information on each acheivement.";
-//	
-//	sceneToLoadName = "";
 	}
 }
 
