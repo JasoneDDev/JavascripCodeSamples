@@ -1,12 +1,6 @@
 /*
 This camera smoothes out rotation around the y-axis and height.
 Horizontal Distance to the target is always fixed.
-
-There are many different ways to smooth the rotation but doing it this way gives you a lot of control over how the camera behaves.
-
-For every of those smoothed values we calculate the wanted value and the current value.
-Then we smooth it using the Lerp function.
-Then we apply the smoothed values to the transform's position.
 */
 
 // The target we are following
@@ -33,7 +27,6 @@ function LateUpdate () {
 	var wantedHeight = target.position.y + height;
 	if(target.eulerAngles.x > 40 && target.eulerAngles.x < 140 || target.eulerAngles.x < 320 && target.eulerAngles.x > 220)
 	{
-	//Debug.Log(" x " + target.eulerAngles.x);
 	}
 	else
 	{
