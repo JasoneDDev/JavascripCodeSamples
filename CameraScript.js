@@ -98,18 +98,7 @@ function FixedUpdate () {
 	}
 	else if(startScript.playerMode)
 	{
-//		 
-//		 if(this.transform.parent != PlayerNode.transform)
-//		 {
-//		 this.transform.parent = PlayerNode.transform;
-//		 //this.transform.position = PlayerNode.position;
-//		 // this.transform.rotation = PlayerNode.rotation;
-//		  }
-//		  else if(Vector3.Distance( transform.position, PlayerNode.position) > 0.1)
-//		  {
-//		 transform.position = Vector3.Lerp (transform.position, PlayerNode.position,Time.deltaTime * (zoomDampening*0.5));
-//		 transform.rotation = Quaternion.Slerp (transform.rotation, PlayerNode.rotation, Time.deltaTime * (zoomDampening*0.5));
-//		  }
+
 		 wantedPosition =  PlayerNode.position;
 		 wantedRotation = PlayerNode.rotation;
 		  
@@ -119,12 +108,6 @@ function FixedUpdate () {
 	}
 	else if(startScript.FinishMode)
 	{
-//		 if(this.transform.parent == PlayerNode.transform)
-//		 {
-//		 this.transform.parent = null;
-//		 //this.transform.position = PlayerNode.position;
-//		 // this.transform.rotation = PlayerNode.rotation;
-//		  }
 		 
 		 wantedPosition = FinishNode.position;
 		 wantedRotation = FinishNode.rotation;
