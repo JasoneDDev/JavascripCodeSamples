@@ -288,30 +288,15 @@ DNCycle.DayMode();
 var rUnlock = UnlockRivers();
 
 yield rUnlock;
-//if(OpeningAudio!=null && audio)
-//{
-//audio.clip=OpeningAudio;
-//audio.Play();
-//}
 
 Time.timeScale = 1;
 
-//		PlayerPrefs.SetString("PlayerName", "Jason");
-//		PlayerPrefs.SetInt("CurrentLevel", 1);
-//		PlayerPrefs.SetInt("GlobalScore", 2200);
-
-//BG.GetComponent(GUITexture).pixelInset.width = Screen.width;
-//BG.GetComponent(GUITexture).pixelInset.height = Screen.height;
-//BG.GetComponent(GUITexture).pixelInset.y = -1*((BG.GetComponent(GUITexture).pixelInset.height - Screen.height)/2);
 		
 	SafeZone  = helpUI.addSprite( "SafeZone.png", 0, 0, 0 );
 	SafeZone.positionFromCenter(0.0f,0.0f);
-	SafeZone.hidden=true;
-	//CampaignBtn.hidden=true;		
+	SafeZone.hidden=true;	
 		
 
-			
-		
 
 		text = UIText( textToolkit, "ImpactFont", "ImpactFont_0.png");
 		riverText = UIText( textToolkit, "ImpactFont", "ImpactFont_0.png");
@@ -319,8 +304,6 @@ Time.timeScale = 1;
 		riverText.lineWrapWidth = (Screen.width*0.43f) *1.2 ;
 	
 	//-----------------------MAIN MENU----------------------------------------------
-	//instructions = text.addTextInstance( "D-PAD to toggle    O to select ",0,0,textScaleFactor/4, 0, Color(.8,.9,.9,1), UITextAlignMode.Center, UITextVerticalAlignMode.Middle );	
-	//instructions.positionFromBottomLeft(0.1,0.1);
 	
 	hintText = riverText.addTextInstance( " " ,0,0,textScaleFactor*0.65, 0, Color(1,1,1.5,0), UITextAlignMode.Center, UITextVerticalAlignMode.Middle );	
 	hintText.positionFromCenter(0.0f,0.0f);
@@ -964,14 +947,7 @@ Time.timeScale = 1;
 	DecalBtnSelected.touchDownSound = buttonSound;	
 
 //-------------------------------------------------------------------
-	//RiverSwapHorizontal = buttonUI.addSprite( "DpadHorizontalIcon.png", 0, 0, 10 );
-//	RiverSwapHorizontal = UIButton.create(buttonUI,"DpadHorizontalIcon.png","DpadHorizontalIcon.png",0,0,10);
-//	RiverSwapHorizontal.positionFromCenter(0.1f,-0.65f);
-//	RiverSwapHorizontal.hidden=true;
-//	RiverSwapHorizontal.onTouchUpInside += onTouchRiverSwapHorizontal;
-//	RiverSwapHorizontal.touchDownSound = buttonSound;		
 	
-	//RiverSwapVertical = buttonUI.addSprite( "DpadVerticalIcon.png", 0, 0, 10 );
 	RiverSwapVertical = UIButton.create(buttonUI,"DpadVerticalIcon.png","DpadVerticalIcon.png",0,0,10);
 	RiverSwapVertical.positionFromCenter(0.0f,-0.8f);
 	RiverSwapVertical.hidden=true;
@@ -1047,8 +1023,6 @@ function LateUpdate()
 //"DPD" // dpad down
 //"O" is select with O btn
 
-//OuyaInputManager.GetButtonDown("RT",OuyaSDK.OuyaPlayer.player1)
-
 if(isPlayer == 1 || isPlayer == null || isPlayer == 0)
 {
 isPlayer = 1;
@@ -1094,10 +1068,7 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			
 		}
 }
-//InputManager.GetAxis("Vertical", playerName)
 
-//function HandleButtonEvent(p:OuyaSDK.OuyaPlayer, b:OuyaSDK.KeyEnum,  bs:OuyaSDK.InputAction)
-//{
 	//Debug.Log(p + " " + b + " " + bs + " ");
 	if(startingLocation && creditsText.hidden)
 	{
@@ -1207,7 +1178,6 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			else if(  InputManager.GetButton("Acceleration", playerName)&& !stick)
 			{
 			//load the river scene
-			//Application.LoadLevel("TestRiver01");
 			if(loader.isMobile)
 			{
 			//settings
@@ -1916,14 +1886,12 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			//toggle characters to left
 			kayakBuilder.SwapColor(false, isPlayer);
 			stickInTheWay();
-			//characterBuilder.SwapShorts(false, isPlayer);
 			}
 			else if( InputManager.GetButton("DRight", playerName)&& !stick    || InputManager.GetAxis("Roll", playerName)<- 0.8 && !stick )
 			{
 			//toggle characters to right
 			stickInTheWay();
 			kayakBuilder.SwapColor(true, isPlayer);
-			//characterBuilder.SwapShorts(true, isPlayer);
 			}
 			else if(  InputManager.GetButton("Acceleration", playerName)&& !stick)
 			{
@@ -1955,14 +1923,12 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			//toggle characters to left
 			stickInTheWay();
 			kayakBuilder.SwapDesign(false, isPlayer);
-			//characterBuilder.SwapShorts(false, isPlayer);
 			}
 			else if( InputManager.GetButton("DRight", playerName)&& !stick    || InputManager.GetAxis("Roll", playerName) <- 0.8 && !stick )
 			{
 			//toggle characters to right
 			stickInTheWay();
 			kayakBuilder.SwapDesign(true, isPlayer);
-			//characterBuilder.SwapShorts(true, isPlayer);
 			}
 			else if(  InputManager.GetButton("Acceleration", playerName)&& !stick)
 			{
@@ -1994,14 +1960,12 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			//toggle characters to left
 			stickInTheWay();
 			kayakBuilder.SwapDecal(false, isPlayer);
-			//characterBuilder.SwapShorts(false, isPlayer);
 			}
 			else if( InputManager.GetButton("DRight", playerName)&& !stick    || InputManager.GetAxis("Roll", playerName) <- 0.8 && !stick )
 			{
 			//toggle characters to right
 			stickInTheWay();
 			kayakBuilder.SwapDecal(true, isPlayer);
-			//characterBuilder.SwapShorts(true, isPlayer);
 			}
 			else if(  InputManager.GetButton("Acceleration", playerName)&& !stick)
 			{
@@ -2177,7 +2141,6 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			kayakBuilder.SaveKayak(isPlayer,false);
 			
 			}
-			//characterBuilder.SaveCharMap(isPlayer);
 			characterBuilder.SaveCharSelection(isPlayer);
 			startingLocation=false;
 			customizeLocation=false;
@@ -2205,20 +2168,14 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 		{
 			if(InputManager.GetButton("DDown", playerName)&& !stick   || InputManager.GetAxis("Vertical", playerName) > 0.8 && !stick)
 			{
-//			SaveBtn.hidden=false;
-//			SaveBtnSelected.hidden=true;
-//			NameBoxSelected.hidden=false;
-//			NameBox.hidden=true;
+
 			Debug.Log("swap down river");
 			SwapRiver("Down");
 			stickInTheWay();
 			}
 			else if(  InputManager.GetButton("DUp", playerName)&& !stick    ||  InputManager.GetAxis("Vertical", playerName) <- 0.8 && !stick )
 			{
-//			SaveBtn.hidden=false;
-//			SaveBtnSelected.hidden=true;
-//			NameBoxSelected.hidden=false;
-//			NameBox.hidden=true;
+
 			Debug.Log("swap up river");
 			SwapRiver("Up");
 			stickInTheWay();
@@ -2227,23 +2184,12 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			{
 			//Debug.Log("left press");
 			//Jump to Delete Button
-//			SaveBtn.hidden=false;
-//			SaveBtnSelected.hidden=true;
-//			DeleteBtnSelected.hidden=false;
-//			DeleteBtn.hidden=true;
-			//riverSetups[currentRiver].GetComponent(RiverSetupItem).SkipAcheivement("Left");
-			//stickInTheWay();
 			}
 			else if( InputManager.GetButton("DRight", playerName)&& !stick    || InputManager.GetAxis("Roll", playerName) > 0.8 && !stick )
 			{
 			//	Debug.Log("right press");
 			//Jump to Continue Button
-//			SaveBtn.hidden=false;
-//			SaveBtnSelected.hidden=true;
-//			ContinueBtnSelected.hidden=false;
-//			ContinueBtn.hidden=true;
-			//riverSetups[currentRiver].GetComponent(RiverSetupItem).SkipAcheivement("Right");
-			//stickInTheWay();
+
 			}
 			else if(  InputManager.GetButton("Acceleration", playerName)&& !stick)
 			{
@@ -2344,7 +2290,6 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			PlayerPrefs.SetInt("NumberOfPlayers",2);//set to 2 player
 			HideMultiSelect();
 			ShowControllerSelect(2);
-			//ShowCustomizationMenu();
 			
 			}
 		
@@ -2516,9 +2461,6 @@ if(!ControllerBtn.hidden && !stick && !startingLocation && !multiPlayerSelect &&
 			Controller4BtnSelected.hidden = true;
 			
 			Debug.Log("heya");
-			//ShowCustomizationMenu();
-			//customizeLocation=true;
-			//multiPlayerSelect=false;
 			
 			ShowMultiChoice();
 		
@@ -3179,8 +3121,6 @@ function ShowRiverSelectMenu()
 	
 	if(!loader.isMobile)
 	{
-	//RiverSwapHorizontal.hidden=false;
-	//RiverSwapHorizontal.positionTo( 1f, RiverSwapHorizontal.localPosition + Vector3(Screen.width*0.45,0,0), Easing.Quartic.easeInOut );
 	}
 	else
 	{
@@ -3207,7 +3147,6 @@ function ShowRiverSelectMenu()
 
 	StartGameBtn.hidden=false;
 	
-	//ReturnBtn.positionFromBottomLeft(0.025f,-0.175f);
 	ReturnBtn.positionTo( 1f, ReturnBtn.localPosition + Vector3(Screen.width*0.215,0,0), Easing.Quartic.easeInOut);
 	
 
@@ -3225,10 +3164,6 @@ function ShowRiverSelectMenu()
 function HideRiverSelectMenu()
 	{
 	
-//	if(!loader.isMobile)
-//	{
-//	RiverSwapHorizontal.positionTo( 1f, RiverSwapHorizontal.localPosition + Vector3(Screen.width*-0.45,0,0), Easing.Quartic.easeInOut );
-//	}
 RiverSwapVertical.positionTo( 1f, RiverSwapVertical.localPosition + Vector3(Screen.width*-0.45,0,0), Easing.Quartic.easeInOut );
 
 riverSetups[currentRiver].GetComponent(RiverSetupItem).HideRiverMenu();
@@ -3247,7 +3182,6 @@ riverSetups[currentRiver].GetComponent(RiverSetupItem).HideRiverMenu();
 yield WaitForSeconds(.8);
 	
 	RiverSwapVertical.hidden=true;
-	//RiverSwapHorizontal.hidden=true;
 	StartGameBtn.hidden=true;
 ReturnBtn.hidden=true;
 	ReturnBtnSelected.hidden=true;
@@ -3428,7 +3362,6 @@ function SwapRiver(direction:String)
 	return;
 	}
 	RiverSwapVertical.positionFromCenter(0.0f,-0.35f);
-	//RiverSwapHorizontal.positionFromCenter(0.1f,-0.15f);
 	RiverSwapVertical.scaleFromTo( 0.3f, new Vector3( 0.2, 0.2, 1 ), new Vector3( 1f, 1f, 1 ), Easing.Bounce.easeOut );
 	
 	//here we gather the river info
@@ -3577,38 +3510,7 @@ function OnUnlockItemIcon()
 	UnlockItemIcon.alphaFromTo(0.75f,1,0, Easing.Linear.easeOut);
 	yield WaitForSeconds(1.0);
 	UnlockItemIcon.hidden=true;
-}
-
-//-----------------------------------------------------------------------------
-
-
-
-//---------------------------------------------------------------------------
-
-
-
-//    private function OnGUI()
-//    {
-//        GUILayout.Label(String.Format("Vertical: {0}", InputManager.GetAxis("Vertical", OuyaSDK.OuyaPlayer.player2)));
-//        GUILayout.Label(String.Format("Acceleration: {0}", InputManager.GetButton("Acceleration", OuyaSDK.OuyaPlayer.player1)));
-//        GUILayout.Label(String.Format("Orbit: {0}", InputManager.GetButton("Orbit", OuyaSDK.OuyaPlayer.player1)));
-//        GUILayout.Label(String.Format("TurnLeft: {0}", InputManager.GetButton("TurnLeft", OuyaSDK.OuyaPlayer.player1)));
-//        GUILayout.Label(String.Format("TurnRight: {0}", InputManager.GetButton("TurnRight", OuyaSDK.OuyaPlayer.player1)));
-//        
-//        for(i in OuyaExampleCommon.Joysticks)
-//        {
-//        	if(i == null)
-//        	{
-//        		return;
-//        	}
-//        	else
-//        	{
-//        		GUILayout.Label(String.Format("Joystick: {0}", i));
-//        	}
-//        }
-//    }
-
- 
+} 
 
 
 
@@ -3889,10 +3791,7 @@ function onTouchDecalBtn()
 	kayakBuilder.SwapDecal(true, isPlayer);
 }
 
-//function onTouchRiverSwapHorizontal()
-//{
-//	riverSetups[currentRiver].GetComponent(RiverSetupItem).SkipAcheivement("Right");
-//}
+
 
 function onTouchRiverSwapVertical()
 {
