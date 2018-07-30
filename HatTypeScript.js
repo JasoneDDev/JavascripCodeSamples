@@ -13,10 +13,7 @@ function SwapColor(color:int, player:int)
 {
 	if(MainMatP01!=null && MainMatP02!=null && MainMatP03!=null && MainMatP04!=null && hatObj!=null && color < MaterialArray.Length )
 	{
-//	if(color > MaterialArray.Length )
-//	{
-//	color=0;
-//	}
+
 hatObj = this.gameObject.transform.GetChild(0);
 	switch (player)
         {
