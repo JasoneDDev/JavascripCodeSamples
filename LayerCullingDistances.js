@@ -17,8 +17,6 @@ var distances = new float[32];
 distances[12] = distanceToCull; //grass
 distances[13]= distanceToCullLONG;
 distances[14]=distanceToCullRiver;
-//distances[10] = 300; //bushes
-//distances[14] = 250; //enemies
 
 camera.layerCullDistances = distances;
 }
