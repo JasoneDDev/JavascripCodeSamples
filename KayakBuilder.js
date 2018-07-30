@@ -19,12 +19,10 @@ gui = FindObjectOfType(GUI_Menu);
 function Start ()
 {
 yield WaitForSeconds(1);
-//PlayerPrefs.SetInt("unlockedKayaks",1);
 var unlockKayaks = UnlockKayaks();
 yield unlockKayaks;
 
-var kString = PlayerPrefs.GetString("KayakPlayer1");//,""+currentKayak+","+currentColor+","+currentDesign+","+currentDecal);
-//Debug.Log(kString);
+var kString = PlayerPrefs.GetString("KayakPlayer1");
 if(kString =="")
 {
 kString = "0,0,0,0";
@@ -65,7 +63,6 @@ function SaveKayak(player:int, continuing:boolean)
 {
 PlayerPrefs.SetString("KayakPlayer"+player,""+currentKayak+","+currentColor+","+currentDesign+","+currentDecal);
 PlayerPrefs.Save();
-//Debug.Log("KayakPlayer"+player+" Value: "+currentKayak+","+currentColor+","+currentDesign+","+currentDecal);
 
 if(continuing)
 {
@@ -75,7 +72,7 @@ player+=1;
 var kString2:String;
 	if(player>3)
 	{
-	 kString2= PlayerPrefs.GetString("KayakPlayer4");//,""+currentKayak+","+currentColor+","+currentDesign+","+currentDecal);
+	 kString2= PlayerPrefs.GetString("KayakPlayer4");
 	}
 	else if(player>2)
 	{
@@ -96,7 +93,6 @@ kString2 = "0,0,0,0";
 	var kayakValues2 = new Array(kString2.Split(","[0]));
 
 
-//Debug.Log(int.Parse(kayakValues2[0]));
 	currentKayak =  int.Parse(kayakValues2[0]);
 	currentColor =  int.Parse(kayakValues2[1]);
 	currentDesign =  int.Parse(kayakValues2[2]);
@@ -122,7 +118,7 @@ kString2 = "0,0,0,0";
 function SwapKayak(forward:boolean, player:int)// make another variable to see what player it is so we change the correct material to match the player
 {
 	
-	//SaveKayak();
+	
 	
 	if(forward)
 	{
@@ -134,8 +130,7 @@ function SwapKayak(forward:boolean, player:int)// make another variable to see w
 	}
 	
 	
-	
-//Debug.Log("currentKayak " + currentKayak);
+
 	if(currentKayak > Kayaks.Length-1)
 	{
 	currentKayak =0;
@@ -222,8 +217,6 @@ function SwapColor(forward:boolean, player:int)// make another variable to see w
 
 	
 	kayakMat.SetTexture("_MainTex",visibleKayak.transform.GetComponent(KayakScript).color[currentColor]);
-	//kayakMat.SetTexture("_DecalTex",visibleKayak.transform.GetComponent(KayakScript).design[currentDesign]);
-	//kayakMat.SetTexture("_DecalTexB",visibleKayak.transform.GetComponent(KayakScript).decal[currentDecal]);
 	
 	
 }
@@ -249,10 +242,8 @@ function SwapDesign(forward:boolean, player:int)// make another variable to see 
 	}
 
 	
-	//kayakMat.SetTexture("_MainTex",visibleKayak.transform.GetComponent(KayakScript).color[currentColor]);
 	kayakMat.SetTexture("_DecalTex",visibleKayak.transform.GetComponent(KayakScript).design[currentDesign]);
-	//kayakMat.SetTexture("_DecalTexB",visibleKayak.transform.GetComponent(KayakScript).decal[currentDecal]);
-}
+	}
 
 function SwapDecal(forward:boolean, player:int)// make another variable to see what player it is so we change the correct material to match the player
 {
@@ -275,8 +266,6 @@ function SwapDecal(forward:boolean, player:int)// make another variable to see w
 	}
 
 	
-	//kayakMat.SetTexture("_MainTex",visibleKayak.transform.GetComponent(KayakScript).color[currentColor]);
-	//kayakMat.SetTexture("_DecalTex",visibleKayak.transform.GetComponent(KayakScript).design[currentDesign]);
 	kayakMat.SetTexture("_DecalTexB",visibleKayak.transform.GetComponent(KayakScript).decal[currentDecal]);
 }
 
@@ -287,9 +276,6 @@ function UnlockKayaks():boolean
 	var StringText:String = PlayerPrefs.GetString("unlockedKayaks");
 	var kayakArray:String[] = StringText.Split(","[0]);
 	
-	//   int.Parse();
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));
-	//Debug.Log(PlayerPrefs.GetString("unlockedKayaks"));	
 	
 	for (var i in kayakArray)
 	{
